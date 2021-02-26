@@ -17,10 +17,47 @@ import Airmail from "./airmail.jpg"
 
 const Contact = () => {
 
+    function validateEmail(emailAddress) {
+        return /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(emailAddress);
+    }
+
+
+
+
+
+
     function formSubmission(event) {
         event.preventDefault();
-        
-        console.log("Hello");
+
+        // Getting the respective values from the form submission
+        const firstName = event.target.formGridFirstName.value.trim();
+        const lastName = event.target.formGridLastName.value.trim();
+        const emailAddress = event.target.formGridEmail.value.trim();
+        const phoneNumber = event.target.formGridPhone.value.trim();
+        const birthdayMonth = event.target.formGridBirthdayMonth.value.trim();
+        const birthdayDay = event.target.formGridBirthdayDay.value.trim();
+        const birthdayYear = event.target.formGridBirthdayYear.value.trim();
+        const zipCode = event.target.formGridZipCode.value.trim();
+
+        // Validating the various components
+
+
+        validateEmail(emailAddress);
+
+
+
+        const finalUserObject = {
+            firstName: firstName,
+            lastName: lastName,
+            emailAddress: emailAddress,
+            phoneNumber: phoneNumber,
+            birthdayMonth: birthdayMonth,
+            birthdayDay: birthdayDay,
+            birthdayYear: birthdayYear,
+            zipCode: zipCode
+        }
+
+        console.log(finalUserObject)
     }
 
     return (
@@ -33,7 +70,10 @@ const Contact = () => {
 
                     }}
                 >
-                    <div>
+
+                    <Container>
+
+
                         <Form onSubmit={formSubmission}>
                             <Form.Row>
                                 <Form.Group as={Col} controlId="formGridFirstName">
@@ -47,33 +87,51 @@ const Contact = () => {
                                 </Form.Group>
                             </Form.Row>
 
-                            <Form.Group controlId="formGridEmail">
+                            <Form.Group as={Col} controlId="formGridEmail">
                                 <Form.Label>Email Address</Form.Label>
                                 <Form.Control type="text" placeholder="jane.smith@email.com" />
                             </Form.Group>
 
-                            <Form.Group controlId="formGridPhone">
+                            <Form.Group as={Col} controlId="formGridPhone">
                                 <Form.Label>Phone Number</Form.Label>
                                 <Form.Control type="text" placeholder="123-456-7890" />
                             </Form.Group>
 
-                            <Form.Row>
-                                <Form.Group as={Col} controlId="formGridBirthday">
-                                    <Form.Label>Birthday</Form.Label>
-                                    <Form.Control type="text" placeholder="06/10/1971" />
+                            <Col>
+                            Birthday
+                            </Col>
+
+                            <Form.Row as={Col}>
+
+                                <Form.Group as={Col} controlId="formGridBirthdayMonth">
+                                    <Form.Label>Month</Form.Label>
+                                    <Form.Control type="text" placeholder="06" />
                                 </Form.Group>
 
-                                <Form.Group as={Col} controlId="formGridZipCode">
-                                    <Form.Label>Zip Code</Form.Label>
-                                    <Form.Control type="text" placeholder="60614" />
+
+                                <Form.Group as={Col} controlId="formGridBirthdayDay">
+                                    <Form.Label>Day</Form.Label>
+                                    <Form.Control type="text" placeholder="10" />
                                 </Form.Group>
+
+
+                                <Form.Group as={Col} controlId="formGridBirthdayYear">
+                                    <Form.Label>Year</Form.Label>
+                                    <Form.Control type="text" placeholder="1971" />
+                                </Form.Group>
+
                             </Form.Row>
+
+                            <Form.Group as={Col} controlId="formGridZipCode">
+                                <Form.Label>Zip Code</Form.Label>
+                                <Form.Control type="text" placeholder="60614" />
+                            </Form.Group>
 
                             <Button type="submit">Submit form</Button>
                         </Form>
-                    </div>
-                </div>
+                    </Container>
 
+                </div>
             </Container>
         </div>
     );
