@@ -20,17 +20,30 @@ const Contact = () => {
     // State Object variables that corresponding to messages that will display if non-valid information is entered
     const [emailMessage, setEmailMessage] = useState("Email Address")
     const [phoneMessage, setPhoneMessage] = useState("Phone Number")
+    const [monthMessage, setMonthMessage] = useState("Month")
+    const [dateMessage, setDateMessage] = useState("Day")
 
-    // All of the various validation functions
+    // ALL of the various validation functions
+    // EMAIL (text@text.text)
     function validateEmail(emailAddress) {
         return /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(emailAddress);
+    }
+    // PHONE (various formats of 123-456-7890)
+    function validatePhone(phoneNumber) {
+        return /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(phoneNumber);
+    }
+    // MONTH (numbers 01 to 12)
+    function validateMonth(month) {
+        return /(^0?[1-9]$)|(^1[0-2]$)/gm.test(month);
+    }
+    // DATE (numbers 01 to 31)
+    function validateDate(date) {
+        return /(0[1-9]|[12]\d|3[01])/gm.test(date);
     }
 
 
 
-
-
-
+    // OVERALL Function that runs when the "Submit" button is clicked
     function formSubmission(event) {
         event.preventDefault();
 
@@ -46,19 +59,26 @@ const Contact = () => {
 
         // Calling the various validation functions for each piece of user information
         const isEmailValid = validateEmail(emailAddress);
-
-
+        const isPhoneValid = validatePhone(phoneNumber);
+        const isMonthValid = validateMonth(birthdayMonth);
+        const isDateValid = validateDate(birthdayDay);
 
         // If any of the validation efforts FAIL, update corresponding messages
         if(isEmailValid === false) {
-            setEmailMessage("Please enter a valid email")
+            setEmailMessage("Please enter a valid email");
+        }
+        if(isPhoneValid === false) {
+            setPhoneMessage("Please enter a valid phone");
+        }
+        if(isMonthValid === false) {
+            setMonthMessage("Please enter valid month, 01 to 12");
+        }
+        if(isDateValid === false) {
+            setDateMessage("Please enter valid date, 01 to 31");
         }
 
-
-
-
-        // If ALL of the criteria have been validated...
-        if (isEmailValid) {
+        // If ALL of the criteria have been validated as true...
+        if (isEmailValid && isPhoneValid && isMonthValid && isDateValid) {
             // Creating a SINGLE user object (JSON - Javascript Object Notation) for ease of file transfer purposes
             const finalUserObject = {
                 firstName: firstName,
@@ -78,7 +98,7 @@ const Contact = () => {
 
 
             // HIDE THE FORM UPON SUCCESS
-
+            // Nice little message and picture?!?
 
 
         }
@@ -116,7 +136,7 @@ const Contact = () => {
 
                             <Form.Group as={Col} controlId="formGridPhone">
                                 <Form.Label>{phoneMessage}</Form.Label>
-                                <Form.Control type="text" placeholder="123-456-7890" />
+                                <Form.Control type="text" placeholder="123-456-7890 or 1234567890" />
                             </Form.Group>
 
                             <Col>
@@ -126,13 +146,13 @@ const Contact = () => {
                             <Form.Row as={Col}>
 
                                 <Form.Group as={Col} controlId="formGridBirthdayMonth">
-                                    <Form.Label>Month</Form.Label>
+                                    <Form.Label>{monthMessage}</Form.Label>
                                     <Form.Control type="text" placeholder="06" />
                                 </Form.Group>
 
 
                                 <Form.Group as={Col} controlId="formGridBirthdayDay">
-                                    <Form.Label>Day</Form.Label>
+                                    <Form.Label>{dateMessage}</Form.Label>
                                     <Form.Control type="text" placeholder="10" />
                                 </Form.Group>
 
