@@ -18,10 +18,12 @@ import Airmail from "./airmail.jpg"
 const Contact = () => {
 
     // State Object variables that corresponding to messages that will display if non-valid information is entered
-    const [emailMessage, setEmailMessage] = useState("Email Address")
-    const [phoneMessage, setPhoneMessage] = useState("Phone Number")
-    const [monthMessage, setMonthMessage] = useState("Month")
-    const [dateMessage, setDateMessage] = useState("Day")
+    const [emailMessage, setEmailMessage] = useState("Email Address");
+    const [phoneMessage, setPhoneMessage] = useState("Phone Number");
+    const [monthMessage, setMonthMessage] = useState("Month");
+    const [dateMessage, setDateMessage] = useState("Day");
+    const [yearMessage, setYearMessage] = useState("Year");
+    const [zipCodeMessage, setZipCodeMessage] = useState("Zip Code")
 
     // ALL of the various validation functions
     // EMAIL (text@text.text)
@@ -40,8 +42,14 @@ const Contact = () => {
     function validateDate(date) {
         return /(0[1-9]|[12]\d|3[01])/gm.test(date);
     }
-
-
+    // YEAR (numbers 0000 to 9999)
+    function validateYear(year) {
+        return /^\d{4}$/gm.test(year);
+    }
+    // ZIP CODE (numbers 00000 to 99999)
+    function validateZipcode(zipCode) {
+        return /^\d{5}$/gm.test(zipCode);
+    }
 
     // OVERALL Function that runs when the "Submit" button is clicked
     function formSubmission(event) {
@@ -62,23 +70,31 @@ const Contact = () => {
         const isPhoneValid = validatePhone(phoneNumber);
         const isMonthValid = validateMonth(birthdayMonth);
         const isDateValid = validateDate(birthdayDay);
+        const isYearValid = validateYear(birthdayYear);
+        const isZipValid = validateZipcode(zipCode)
 
         // If any of the validation efforts FAIL, update corresponding messages
-        if(isEmailValid === false) {
+        if (isEmailValid === false) {
             setEmailMessage("Please enter a valid email");
         }
-        if(isPhoneValid === false) {
+        if (isPhoneValid === false) {
             setPhoneMessage("Please enter a valid phone");
         }
-        if(isMonthValid === false) {
+        if (isMonthValid === false) {
             setMonthMessage("Please enter valid month, 01 to 12");
         }
-        if(isDateValid === false) {
+        if (isDateValid === false) {
             setDateMessage("Please enter valid date, 01 to 31");
+        }
+        if (isYearValid === false) {
+            setYearMessage("Please enter valid year")
+        }
+        if (isZipValid === false) {
+            setZipCodeMessage("Please enter valid zip code")
         }
 
         // If ALL of the criteria have been validated as true...
-        if (isEmailValid && isPhoneValid && isMonthValid && isDateValid) {
+        if (isEmailValid && isPhoneValid && isMonthValid && isDateValid && isYearValid) {
             // Creating a SINGLE user object (JSON - Javascript Object Notation) for ease of file transfer purposes
             const finalUserObject = {
                 firstName: firstName,
@@ -158,23 +174,23 @@ const Contact = () => {
 
 
                                 <Form.Group as={Col} controlId="formGridBirthdayYear">
-                                    <Form.Label>Year</Form.Label>
+                                    <Form.Label>{yearMessage}</Form.Label>
                                     <Form.Control type="text" placeholder="1971" />
                                 </Form.Group>
 
                             </Form.Row>
 
                             <Form.Group as={Col} controlId="formGridZipCode">
-                                <Form.Label>Zip Code</Form.Label>
+                                <Form.Label>{zipCodeMessage}</Form.Label>
                                 <Form.Control type="text" placeholder="60614" />
                             </Form.Group>
 
-                            <Button type="submit">Submit form</Button>
+                            <Button type="submit" className="sBtn">SIGN UP</Button>
                         </Form>
                     </Container>
 
                 </div>
-                                
+
             </Container>
         </div>
     );

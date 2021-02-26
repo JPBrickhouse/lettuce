@@ -1,0 +1,8 @@
+.sBtn {
+    background-color:#3ea99f;
+    border-style: none;
+}
+
+.sBtn:hover {
+    text-decoration: underline;
+}
