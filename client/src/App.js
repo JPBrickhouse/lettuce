@@ -16,22 +16,22 @@ function App() {
 	return (
 		<BrowserRouter>
 			<div>
+				{/* The permanent sticky navigation bar */}
 				<AppNav />
-
+				{/* Router switch  */}
 				<Switch>
-
+					{/* When the /menu route is hit, visit the menu page */}
 					<Route path="/menu">
 						<Menu />
 					</Route>
-
+					{/* When the /contact route is hit, visit the contact page */}
 					<Route path="/contact">
 						<Contact />
 					</Route>
-
+					{/* When the /home route is hit, visit the home page */}
 					<Route path="/">
 						<Home />
 					</Route>
-
 				</Switch>
 
 			</div>
