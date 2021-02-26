@@ -124,15 +124,12 @@ const Contact = () => {
         <div>
             <Container>
 
-                <div id="postcardContainer"
-                    style={{
-                        backgroundImage: `url(${Airmail})`,
-
-                    }}
-                >
-
+                <div id="postcardContainer" style={{ backgroundImage: `url(${Airmail})` }}>
+                    <br />
+                    <br />
                     <Container>
                         <Form onSubmit={formSubmission}>
+
                             <Form.Row as={Col}>
                                 <Form.Group as={Col} controlId="formGridFirstName">
                                     <Form.Label>First Name</Form.Label>
@@ -188,7 +185,9 @@ const Contact = () => {
                             <Button type="submit" className="sBtn">SIGN UP</Button>
                         </Form>
                     </Container>
-
+                    <br />
+                    <br />
+                    <br />
                 </div>
 
             </Container>

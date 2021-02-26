@@ -5,4 +5,11 @@
 
 .sBtn:hover {
     text-decoration: underline;
+    background-color:#3ea99f;
+    border-style: none;
+}
+
+#postcardContainer {
+    background-size: contain;
+    background-repeat: no-repeat;
 }
