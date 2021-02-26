@@ -1,3 +1,10 @@
+.stickyNav {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+}
+
 .navText {
     color:#3ea99f;
 }

@@ -17,8 +17,8 @@ import "./AppNavStyles.css"
 // The Navigation Bar as a function
 const AppNav = () => {
     return (
-        <div>
-            <Navbar bg="light" expand="lg" variant="light" sticky="top">
+        <div className="stickyNav">
+            <Navbar bg="light" expand="lg" variant="light">
                 {/* Brand Logo */}
                 <Navbar.Brand as={Link} to="/" id="navBarHomeButton">
                     <img
