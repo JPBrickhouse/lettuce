@@ -9,7 +9,9 @@
     border-style: none;
 }
 
-#postcardContainer {
+/* Media query to change background-size */
+/* "contain" versus "cover" */
+#postcardImage {
     background-size: contain;
     background-repeat: no-repeat;
 }

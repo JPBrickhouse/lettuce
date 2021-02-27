@@ -18,6 +18,8 @@ import Airmail from "./airmail.jpg"
 const Contact = () => {
 
     // State Object variables that corresponding to messages that will display if non-valid information is entered
+    const [firstNameMessage, setFirstNameMessage] = useState("First Name")
+    const [lastNameMessage, setLastNameMessage] = useState("Last Name")
     const [emailMessage, setEmailMessage] = useState("Email Address");
     const [phoneMessage, setPhoneMessage] = useState("Phone Number");
     const [monthMessage, setMonthMessage] = useState("Month");
@@ -26,6 +28,11 @@ const Contact = () => {
     const [zipCodeMessage, setZipCodeMessage] = useState("Zip Code")
 
     // ALL of the various validation functions
+    // NAMES (A to Z case-insensitive)
+    function validateName(name) {
+        return /^[a-zA-Z]+$/g.test(name);
+    }
+
     // EMAIL (text@text.text)
     function validateEmail(emailAddress) {
         return /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(emailAddress);
@@ -66,6 +73,8 @@ const Contact = () => {
         const zipCode = event.target.formGridZipCode.value.trim();
 
         // Calling the various validation functions for each piece of user information
+        const isFirstNameValid = validateName(firstName);
+        const isLastNameValid = validateName(lastName);
         const isEmailValid = validateEmail(emailAddress);
         const isPhoneValid = validatePhone(phoneNumber);
         const isMonthValid = validateMonth(birthdayMonth);
@@ -74,6 +83,12 @@ const Contact = () => {
         const isZipValid = validateZipcode(zipCode)
 
         // If any of the validation efforts FAIL, update corresponding messages
+        if (isFirstNameValid === false) {
+            setFirstNameMessage("Please enter valid first name")
+        }
+        if (isLastNameValid === false) {
+            setLastNameMessage("Please enter valid last name")
+        }
         if (isEmailValid === false) {
             setEmailMessage("Please enter a valid email");
         }
@@ -81,10 +96,10 @@ const Contact = () => {
             setPhoneMessage("Please enter a valid phone");
         }
         if (isMonthValid === false) {
-            setMonthMessage("Please enter valid month, 01 to 12");
+            setMonthMessage("Valid month 01-12");
         }
         if (isDateValid === false) {
-            setDateMessage("Please enter valid date, 01 to 31");
+            setDateMessage("Valid date 01-31");
         }
         if (isYearValid === false) {
             setYearMessage("Please enter valid year")
@@ -94,7 +109,7 @@ const Contact = () => {
         }
 
         // If ALL of the criteria have been validated as true...
-        if (isEmailValid && isPhoneValid && isMonthValid && isDateValid && isYearValid) {
+        if (isFirstNameValid && isLastNameValid && isEmailValid && isPhoneValid && isMonthValid && isDateValid && isYearValid) {
             // Creating a SINGLE user object (JSON - Javascript Object Notation) for ease of file transfer purposes
             const finalUserObject = {
                 firstName: firstName,
@@ -124,65 +139,93 @@ const Contact = () => {
         <div>
             <Container>
 
-                <div id="postcardContainer" style={{ backgroundImage: `url(${Airmail})` }}>
+                <div>
+                    Fill out a postcard below and we'll let you know about fresh deals on our fresh meals, along with other breaking news about ASAP Poke!
+
+                    Why do we need your birthday? For your annual birthday rewards, of course!
+
+                    Why do we need your zip code? To let you know about other Lettuce restaurants in your neighborhood!
+                </div>
+
+
+                <div id="postcardImage" style={{ backgroundImage: `url(${Airmail})` }}>
                     <br />
                     <br />
                     <Container>
                         <Form onSubmit={formSubmission}>
 
                             <Form.Row as={Col}>
-                                <Form.Group as={Col} controlId="formGridFirstName">
-                                    <Form.Label>First Name</Form.Label>
-                                    <Form.Control type="text" placeholder="Jane" />
-                                </Form.Group>
+                                <Col sm={4}>
+                                    <Form.Group controlId="formGridFirstName">
+                                        <Form.Label>{firstNameMessage}</Form.Label>
+                                        <Form.Control type="text" placeholder="Jane" />
+                                    </Form.Group>
+                                </Col>
 
-                                <Form.Group as={Col} controlId="formGridLastName">
-                                    <Form.Label>Last Name</Form.Label>
-                                    <Form.Control type="text" placeholder="Smith" />
-                                </Form.Group>
+                                <Col sm={4}>
+                                    <Form.Group controlId="formGridLastName">
+                                        <Form.Label>{lastNameMessage}</Form.Label>
+                                        <Form.Control type="text" placeholder="Smith" />
+                                    </Form.Group>
+                                </Col>
                             </Form.Row>
 
-                            <Form.Group as={Col} controlId="formGridEmail">
-                                <Form.Label>{emailMessage}</Form.Label>
-                                <Form.Control type="text" placeholder="jane.smith@email.com" />
-                            </Form.Group>
+                            <Form.Row as={Col}>
+                                <Col sm={4}>
+                                    <Form.Group controlId="formGridEmail">
+                                        <Form.Label>{emailMessage}</Form.Label>
+                                        <Form.Control type="text" placeholder="jane.smith@email.com" />
+                                    </Form.Group>
+                                </Col>
 
-                            <Form.Group as={Col} controlId="formGridPhone">
-                                <Form.Label>{phoneMessage}</Form.Label>
-                                <Form.Control type="text" placeholder="123-456-7890 or 1234567890" />
-                            </Form.Group>
+                                <Col sm={4}>
+                                    <Form.Group controlId="formGridPhone">
+                                        <Form.Label>{phoneMessage}</Form.Label>
+                                        <Form.Control type="text" placeholder="123-456-7890 or 1234567890" />
+                                    </Form.Group>
+                                </Col>
+                            </Form.Row>
 
                             <Col>
                                 Birthday
                             </Col>
 
                             <Form.Row as={Col}>
+                                <Col sm={2}>
+                                    <Form.Group controlId="formGridBirthdayMonth">
+                                        <Form.Label>{monthMessage}</Form.Label>
+                                        <Form.Control type="text" placeholder="06" />
+                                    </Form.Group>
+                                </Col>
 
-                                <Form.Group as={Col} controlId="formGridBirthdayMonth">
-                                    <Form.Label>{monthMessage}</Form.Label>
-                                    <Form.Control type="text" placeholder="06" />
-                                </Form.Group>
+                                <Col sm={2}>
+                                    <Form.Group controlId="formGridBirthdayDay">
+                                        <Form.Label>{dateMessage}</Form.Label>
+                                        <Form.Control type="text" placeholder="10" />
+                                    </Form.Group>
+                                </Col>
 
-
-                                <Form.Group as={Col} controlId="formGridBirthdayDay">
-                                    <Form.Label>{dateMessage}</Form.Label>
-                                    <Form.Control type="text" placeholder="10" />
-                                </Form.Group>
-
-
-                                <Form.Group as={Col} controlId="formGridBirthdayYear">
-                                    <Form.Label>{yearMessage}</Form.Label>
-                                    <Form.Control type="text" placeholder="1971" />
-                                </Form.Group>
-
+                                <Col sm={2}>
+                                    <Form.Group controlId="formGridBirthdayYear">
+                                        <Form.Label>{yearMessage}</Form.Label>
+                                        <Form.Control type="text" placeholder="1971" />
+                                    </Form.Group>
+                                </Col>
                             </Form.Row>
 
-                            <Form.Group as={Col} controlId="formGridZipCode">
-                                <Form.Label>{zipCodeMessage}</Form.Label>
-                                <Form.Control type="text" placeholder="60614" />
-                            </Form.Group>
+                            <Form.Row as={Col}>
+                                <Col sm={2}>
+                                    <Form.Group controlId="formGridZipCode">
+                                        <Form.Label>{zipCodeMessage}</Form.Label>
+                                        <Form.Control type="text" placeholder="60614" />
+                                    </Form.Group>
+                                </Col>
+                            </Form.Row>
 
-                            <Button type="submit" className="sBtn">SIGN UP</Button>
+                            <Col>
+                                <Button type="submit" className="sBtn">SIGN UP</Button>
+                            </Col>
+
                         </Form>
                     </Container>
                     <br />
