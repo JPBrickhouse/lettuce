@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Classic Avocado",
+        "ingredients": [
+            "Classic Poke Marinade",
+            "Sliced Cucumbers",
+            "Avocado",
+            "Soy Beans",
+            "Watermelon Radish",
+            "Seaweed",
+            "Shredded Lettuce",
+            "Pickled Ginger",
+            "Sesame Seeds",
+            "Fresh Ginger",
+            "Scallions"
+        ]
+    },
+    {
+        "name": "Big Island",
+        "ingredients": [
+            "Spicy Mayo",
+            "Pickled Mushrooms",
+            "Diced Avocado",
+            "Sliced Jalapeños",
+            "Watermelon Radish",
+            "Shredded Lettuce",
+            "Pickled Ginger",
+            "Sesame Seeds",
+            "Fresh Ginger",
+            "Scallions"
+        ]
+    },
+    {
+        "name": "Maui Crunch",
+        "ingredients": [
+            "Ponzu Sauce",
+            "Pickled Mushrooms",
+            "Seaweed",
+            "Watermelon Radish",
+            "Crunchy Shallots",
+            "Shredded Lettuce",
+            "Pickled Ginger",
+            "Sesame Seeds",
+            "Fresh Ginger",
+            "Scallions"
+        ]
+    },
+    {
+        "name": "Ginger Yuzu",
+        "ingredients": [
+            "Cucumber",
+            "Edamame",
+            "Seaweed",
+            "Tomato Salsa",
+            "Tobiko",
+            "Watermelon radish",
+            "Pickled Ginger",
+            "Furikake (Asian Crunch Mix)",
+            "Ginger-Yuzu Sauce"
+        ]
+    }
+]

@@ -18,15 +18,14 @@ import ChooseBase from "./choose-base.jpg"
 import Beets from "./beets.jpg"
 import Salmon from "./salmon.jpg"
 import Tuna from "./tuna.jpg"
+import FinalBowl from "./final-bowl.jpg"
+
+// Importing the "choose your style" ingredients
+import styleOptions from "./styleOptions.json"
 
 const Menu = () => {
-
     return (
         <div>
-
-
-            <p>Menu</p>
-
             <Container>
                 {/* -------------------------------------------------- */}
                 {/* Headline */}
@@ -127,17 +126,33 @@ const Menu = () => {
                     </Col>
                 </Row>
                 <Row>
+                    {/* Classic Avocado */}
                     <Col>
-                        <h3>Classic Avocado</h3>
+                        <h3>{styleOptions[0].name}</h3>
+                        <ul>
+                            {styleOptions[0].ingredients.map((item) => <li key={item}>{item}</li>)}
+                        </ul>
                     </Col>
+                    {/* Big Island Spicy */}
                     <Col>
-                        <h3>Big Island Spicy</h3>
+                        <h3>{styleOptions[1].name}</h3>
+                        <ul>
+                            {styleOptions[1].ingredients.map((item) => <li key={item}>{item}</li>)}
+                        </ul>
                     </Col>
+                    {/* Maui Crunch */}
                     <Col>
-                        <h3>Maui Cruch</h3>
+                        <h3>{styleOptions[2].name}</h3>
+                        <ul>
+                            {styleOptions[2].ingredients.map((item) => <li key={item}>{item}</li>)}
+                        </ul>
                     </Col>
+                    {/* Ginger-Yuzu */}
                     <Col>
-                        <h3>Ginger-Yuzu</h3>
+                        <h3>{styleOptions[3].name}</h3>
+                        <ul>
+                            {styleOptions[3].ingredients.map((item) => <li key={item}>{item}</li>)}
+                        </ul>
                     </Col>
                 </Row>
                 {/* -------------------------------------------------- */}
@@ -146,14 +161,12 @@ const Menu = () => {
                     <Col>
                         <h1>That's it! You've built your very own ASAP Poke Bowl</h1>
                         <br />
+                        <Image src={FinalBowl} alt="Final Poke bowl" fluid />
+                        <br />
                         <h1>Ready to order? Let's roll!</h1>
                     </Col>
                 </Row>
             </Container>
-
-
-
-
         </div>
     );
 }
