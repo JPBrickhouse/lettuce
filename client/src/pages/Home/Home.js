@@ -9,27 +9,36 @@ import Col from "react-bootstrap/Col"
 // Importing the images
 import LOGO from "./Asap-Poke.jpg"
 
+// Importing the custom stylesheet
+import "./homeStyles.css"
 
 const Home = () => {
     return (
         <div>
-            <Container>
+            <Container id="animateFour">
                 <div>
                     <Row>
                         <Col>
-                            <h1>Aloha</h1>
-                            <h2>and welcome to</h2>
+                            <h1 className="alohaFont">Aloha!</h1>
                         </Col>
                     </Row>
-                </div>
-                <br />
-                <div>
+                    <br />
+                    {/* Hero Image of ASAP Logo */}
                     <Row>
                         <Col>
                             <Image src={LOGO} alt="ASAP Poke Cover Logo" fluid />
                         </Col>
                     </Row>
                 </div>
+
+
+
+                {/* Description
+                OR
+                Food photo */}
+
+
+
                 <div>
                     <Row>
                         <p>
@@ -42,16 +51,16 @@ const Home = () => {
                             Choose from our signature poke bowls or handcraft your own from an extensive list of ingredients, toppings and sauces.
                         </p>
                         <p>
-                            Check out our menu
+                            Check out our menu - link to menu page
                         </p>
                         <p>
-                            Place your order
+                            Place your order - link to order
                         </p>
                         <p>
-                            Get in touch
+                            Get in touch - link to contact page
                         </p>
                         <p>
-                            Earn rewards!
+                            Earn rewards! - link to rewards page
                         </p>
                     </Row>
                 </div>

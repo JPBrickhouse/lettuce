@@ -1,0 +1,27 @@
+
+/* Break above / below medium devices */
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+    h1.alohaFont {
+        font-family: 'Clicker Script', cursive;
+        font-size: 75px;
+        color:#f37976;
+    }
+}
+@media only screen and (min-width: 768px) {
+    h1.alohaFont {
+        font-family: 'Clicker Script', cursive;
+        font-size: 125px;
+        color:#f37976;
+    }
+}
+
+
+#animateFour {
+    animation: fadeIn 4s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

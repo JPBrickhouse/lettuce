@@ -42,6 +42,7 @@ const AppNav = () => {
                         <Nav.Link as={Link} to="/menu" className="navText navLinks"><h3>Menu</h3></Nav.Link>
                         <Nav.Link as={Link} to="/contact" className="navText navLinks"><h3>Contact</h3></Nav.Link>
                         <Nav.Link as={Link} to="/order" className="navText navLinks"><h3>Order</h3></Nav.Link>
+                        <Nav.Link as={Link} to="/rewards" className="navText navLinks"><h3>Rewards</h3></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
