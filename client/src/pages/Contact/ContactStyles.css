@@ -9,9 +9,17 @@
     border-style: none;
 }
 
-/* Media query to change background-size */
-/* "contain" versus "cover" */
-#postcardImage {
-    background-size: contain;
-    background-repeat: no-repeat;
+/* Break above / below medium devices */
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+    #postcardImage {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+@media only screen and (min-width: 768px) {
+    #postcardImage {
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 }

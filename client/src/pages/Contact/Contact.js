@@ -15,6 +15,9 @@ import Airmail from "./airmail.jpg"
 
 const Contact = () => {
 
+    // State object corresponding to the 
+    const [formSubmitted, setFormSubmitted] = useState(false);
+
     // State Object variables that corresponding to messages that will display if non-valid information is entered
     const [firstNameMessage, setFirstNameMessage] = useState("First Name")
     const [lastNameMessage, setLastNameMessage] = useState("Last Name")
@@ -123,13 +126,11 @@ const Contact = () => {
             // For the sake of this project, simply console log for record
             console.log(finalUserObject)
 
+            // Hide the form
+            document.getElementById("postcardImage").style.display = "none";
 
-
-
-            // HIDE THE FORM UPON SUCCESS
-            // Nice little message and picture?!?
-
-
+            // Set the formSubmitted variable to true
+            setFormSubmitted(true)
         }
     }
 
@@ -230,6 +231,18 @@ const Contact = () => {
                     <br />
                     <br />
                 </div>
+
+                {/* Ternary operator to display a "Success" message if formSubmitted is true */}
+                {formSubmitted ?
+                    <div>
+                        {/* Success image! */}
+                        <p>"Success"</p>
+                    </div>
+                    :
+                    <div>
+                        {/* Display nothing */}
+                    </div>
+                }
 
             </Container>
         </div>
