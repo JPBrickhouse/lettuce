@@ -3,17 +3,23 @@ import React from "react"
 // Importing the ExternalLink component
 import ExternalLink from "../../components/ExternalLink/ExternalLink"
 
+// Importing reacter router dom
+import { Link } from 'react-router-dom'
+
 // Importing React Bootstrap components
 import Container from "react-bootstrap/Container"
 import Image from "react-bootstrap/Image"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import Button from "react-bootstrap/Button"
 
 // Importing the images
 import leyeLogo from "./leyeLogo.jpg"
 import ASAPlogo from "./Asap-Poke.png"
 import Apple from "./AppStore.png"
 import Google from "./GooglePlay.png"
+import pokeOne from "./poke1.jpg"
+import pokeTwo from "./poke2.jpg"
 
 // Importing the custom stylesheet
 import "./rewardStyles.css"
@@ -46,9 +52,10 @@ const Rewards = () => {
                 </Row>
                 <br />
 
+                {/* Membership Row for New and Existing */}
                 <Row>
                     {/* Join column */}
-                    <Col md={6}>
+                    <Col md={6} className="pokeBackgrounds" style={{ backgroundImage: `url(${pokeOne})` }}>
                         <Row>
                             <Col>
                                 <h2>Join</h2>
@@ -69,40 +76,45 @@ const Rewards = () => {
                             </Col>
                         </Row>
                     </Col>
-
                     {/* Already a member column */}
-                    <Col md={6}>
+                    <Col md={6} className="pokeBackgrounds" style={{ backgroundImage: `url(${pokeTwo})` }}>
                         <Row>
                             <Col>
                                 <h2>Already a member?</h2>
                                 <h3>Log in to earn and redeem Dining Rewards</h3>
-                                <p>https://leye.myguestaccount.com/guest/</p>
+                                <p></p>
                             </Col>
                         </Row>
                         <Row>
-
+                            <Col className="justVert">
+                                <ExternalLink urlContent={"https://leye.myguestaccount.com/guest/"} linkContent={<Button size="lg" type="submit" className="sBtn">Log in now!</Button>} />
+                            </Col>
                         </Row>
                     </Col>
                 </Row>
+                <br />
 
-
-                <p>
-                    For more information about program benefits, visit the Frequent Diner website (https://www.leye.com/frequent-diner/), or read our FAQs (https://www.leye.com/frequent-diner/faq/)
-                </p>
-
-
-                <p>
-                    After you sign-up for the Frequent Diner Club, be sure to sign-up for the ASAP Poke Newsletter, for the inside scoop of ASAP deals!
-                </p>
-
-                <p>
-                    Need a refresher on our menu? Checkout our fresh options!
-                </p>
-
-                <p>
-                    Ready to order? Let's roll!
-                </p>
-
+                {/* More links for users to visit! */}
+                <Row>
+                    <Col>
+                        <p className="singleLine">For more information about program benefits, visit the <span><ExternalLink urlContent={"https://www.leye.com/frequent-diner/"} linkContent={"Frequent Diner website"}/></span>, or read our <span><ExternalLink urlContent={"https://www.leye.com/frequent-diner/faq/"} linkContent={"FAQs"}/></span></p>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <p className="singleLine">After you sign-up for the Frequent Diner Club, be sure to sign-up for the <Link to="/contact">ASAP Poke Newsletter</Link>, for the inside scoop of ASAP deals!</p>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <p className="singleLine">Need a refresher on our <Link to="/menu">menu</Link>? Check out our <Link to="/menu">fresh options</Link>!</p>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <h1 className="justVert"><Link to="/order">Ready to order? Let's roll!</Link></h1>
+                    </Col>
+                </Row>
             </Container>
         </div>
     );

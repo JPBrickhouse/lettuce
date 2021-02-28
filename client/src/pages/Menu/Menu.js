@@ -1,12 +1,13 @@
 import React from "react"
 
+// Importing reacter router dom
+import { Link } from 'react-router-dom'
+
 // Importing React Bootstrap components
 import Container from "react-bootstrap/Container"
 import Image from "react-bootstrap/Image"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import Form from "react-bootstrap/Form"
-import Button from "react-bootstrap/Button"
 
 // Importing the custom stylesheet
 import "./MenuStyles.css"
@@ -32,9 +33,8 @@ const Menu = () => {
                 <div className="smallBotBuffer">
                     <Row>
                         <Col>
-                            <h1>Seasoned pro? Let's get you ordering ASAP!</h1>
-                            <br />
-                            <h1>New to ASAP? Welcome! Here's how to build your custom creation!</h1>
+                            <p className="singleLine">Seasoned pro? Let's get you <Link to="/order">ordering ASAP</Link>!</p>
+                            <p className="singleLine">New to ASAP? Welcome! Here's how to build your custom creation!</p>
                         </Col>
                     </Row>
                 </div>
@@ -185,7 +185,7 @@ const Menu = () => {
                 <div>
                     <Row>
                         <Col>
-                            <h1>Ready to order? Let's roll!</h1>
+                        <h1 className="justVert"><Link to="/order">Ready to order? Let's roll!</Link></h1>
                         </Col>
                     </Row>
                 </div>

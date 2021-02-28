@@ -19,7 +19,7 @@ const Home = () => {
                 <div>
                     <Row>
                         <Col>
-                            <h1 className="alohaFont">Aloha!</h1>
+                            <h1 className="alohaFont">Welcome!</h1>
                         </Col>
                     </Row>
                     <br />

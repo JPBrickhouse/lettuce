@@ -31,6 +31,10 @@ h1,h2,h3 {
     align-items: center;
 }
 
+.singleLine {
+    text-align: center;
+}
+
 .wiggleImg:hover {
     animation: shake 0.33s;
 }

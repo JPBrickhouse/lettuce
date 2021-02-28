@@ -221,7 +221,7 @@ const Contact = () => {
                             </Form.Row>
 
                             <Col>
-                                <Button type="submit" className="sBtn">SIGN UP</Button>
+                                <Button size="lg" type="submit" className="sBtn">SIGN UP</Button>
                             </Col>
 
                         </Form>

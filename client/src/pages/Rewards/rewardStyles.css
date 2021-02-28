@@ -16,3 +16,9 @@
     }
 }
 
+.pokeBackgrounds {
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0%;
+}
+
