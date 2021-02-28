@@ -1,0 +1,18 @@
+
+/* Break above / below medium devices */
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+    h2.alohaFont {
+        font-family: 'Clicker Script', cursive;
+        font-size: 50px;
+        color:#f37976;
+    }
+}
+@media only screen and (min-width: 768px) {
+    h2.alohaFont {
+        font-family: 'Clicker Script', cursive;
+        font-size: 100px;
+        color:#f37976;
+    }
+}
+
