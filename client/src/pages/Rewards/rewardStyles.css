@@ -2,18 +2,36 @@
 /* Break above / below medium devices */
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 767px) {
+    /* "Welcome" and "And" cursive font */
     h2.alohaFont {
         font-family: 'Clicker Script', cursive;
         font-size: 50px;
         color:#f37976;
     }
+
+    h3.ralewayFont {
+        font-family: 'Raleway', sans-serif;
+        font-size: 20px;
+    }
+
 }
 @media only screen and (min-width: 768px) {
+    /* "Welcome" and "And" cursive font */
     h2.alohaFont {
         font-family: 'Clicker Script', cursive;
         font-size: 100px;
         color:#f37976;
     }
+
+    h3.ralewayFont {
+        font-family: 'Raleway', sans-serif;
+        font-size: 36px;
+    }
+
+}
+
+h4.ralewaySmaller {
+    font-family: 'Raleway', sans-serif;
 }
 
 .pokeBackgrounds {

@@ -37,36 +37,36 @@ const Home = () => {
                 <div>
                     <Row>
                         <Col>
-                            <h3>ASAP Poke was born out of a single idea: bring Chicago the freshest, sushi-quality fish coupled with seasonal ingredients, as fast as possible.</h3>
+                            <h3 className="ralewayFont">ASAP Poke was born out of a single idea: bring Chicago the freshest, sushi-quality fish coupled with seasonal ingredients, as fast as possible.</h3>
                         </Col>
                     </Row>
                     <br />
                     <Row>
                         <Col>
-                            <h3>Honoring the island tradition of sushi-quality fish and seasonal products, ASAP Poke is a chef-driven, delivery-only concept in Lincoln Park.</h3>
+                            <h3 className="ralewayFont">Honoring the island tradition of sushi-quality fish and seasonal products, ASAP Poke is a chef-driven, delivery-only concept in Lincoln Park.</h3>
                         </Col>
                     </Row>
                     <br />
                     <Row>
                         <Col>
-                            <h3>Choose from our signature poke bowls or handcraft your own from an extensive list of ingredients, toppings and sauces.</h3>
+                            <h3 className="ralewayFont">Choose from our signature poke bowls or handcraft your own from an extensive list of ingredients, toppings and sauces.</h3>
                         </Col>
                     </Row>
                     <br />
                     <Row>
-                        <Col>
-                            <p className="singleLine">New to ASAP? Welcome! Check out our <Link to="/menu">menu</Link> for all of our fresh favorites!</p>
+                        <Col md={6} className="smallBotBuffer">
+                            <h4 className="singleLine ralewaySmaller">New to ASAP? Welcome! Check out our <Link to="/menu">menu</Link> for all of our fresh favorites!</h4>
                         </Col>
-                        <Col>
-                            <p className="singleLine">Seasoned pro? Let's get you <Link to="/order">ordering ASAP</Link>!</p>
+                        <Col md={6}>
+                            <h4 className="singleLine ralewaySmaller">Seasoned pro? Let's get you <Link to="/order">ordering ASAP</Link>!</h4>
                         </Col>
                     </Row>
                     <br />
                     <Row className="smallBotBuffer">
-                        <Col>
+                        <Col md={6} className="smallBotBuffer">
                             <h1 className="justVert"><Link to="/contact">Get in touch!</Link></h1>
                         </Col>
-                        <Col>
+                        <Col md={6} className="smallBotBuffer">
                             <h1 className="justVert"><Link to="/rewards">Earn rewards!</Link></h1>
                         </Col>
                     </Row>

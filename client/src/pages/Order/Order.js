@@ -36,7 +36,7 @@ const Order = () => {
                 {/* All delivery service partner links will go to the "main" company website, since an ASAP poke specific one does not exist */}
                 <Row>
                     {/* Preferred partners */}
-                    <Col md={6}>
+                    <Col md={6} className="midRangeBuffer">
                         <Row>
                             <Col>
                                 <h3>Or you can order from our preferred partners</h3>
@@ -57,7 +57,7 @@ const Order = () => {
                         </Row>
                     </Col>
                     {/* Other delivery options */}
-                    <Col md={6}>
+                    <Col md={6} className="midRangeBuffer">
                         <Row>
                             <Col>
                                 <h3>ASAP Poke is available on other delivery services!</h3>

@@ -56,7 +56,7 @@ const Rewards = () => {
                 <Row className="smallBotBuffer">
                     
                     {/* Join column */}
-                    <Col md={6} className="pokeBackgrounds" style={{ backgroundImage: `url(${pokeTwo10})` }}>
+                    <Col md={6} className="pokeBackgrounds midRangeBuffer" style={{ backgroundImage: `url(${pokeTwo10})` }}>
                         <Row>
                             <Col>
                                 <h2>Join</h2>
@@ -77,10 +77,6 @@ const Rewards = () => {
                             </Col>
                         </Row>
                     </Col>
-                    
-                    {/* Middle Column for spacing */}
-                    {/* <Col md={2}>
-                    </Col> */}
                     
                     {/* Already a member column */}
                     <Col md={6} className="pokeBackgrounds" style={{ backgroundImage: `url(${pokeOne10})` }}>

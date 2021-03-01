@@ -5,6 +5,9 @@
     .bottomBuffer {
         margin-bottom: 30px;
     }
+    .midRangeBuffer {
+        margin-bottom: 40px;
+    }
     .smallBotBuffer {
         margin-bottom: 10px;
     }
@@ -13,7 +16,9 @@
     .bottomBuffer {
         margin-bottom: 100px;
     }
-
+    .midRangeBuffer {
+        margin-bottom: 10px;
+    }
     .smallBotBuffer {
         margin-bottom: 20px;
     }
@@ -38,9 +43,6 @@ h1,h2,h3 {
 .zoomImg:hover{
     transform: scale(1.05);
 }
-
-
-
 
 .wiggleImg:hover {
     animation: shake 0.33s;
