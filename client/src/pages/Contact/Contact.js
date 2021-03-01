@@ -157,8 +157,8 @@ const Contact = () => {
                 {/* Div for the top of the contact page */}
                 <div className="hideOnSubmit" id="topOfContactPage">
                     <Row>
-                        <Col md={8}>
-                            <h1>Fill out a postcard!</h1>
+                        <Col md={8} className="smallBotBuffer">
+                            <h1 className="ralewayDefault">Fill out a postcard!</h1>
                         </Col>
                     </Row>
                     <Row>

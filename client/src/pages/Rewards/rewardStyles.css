@@ -9,7 +9,7 @@
         color:#f37976;
     }
 
-    h3.ralewayFont {
+    h3.ralewayHomepage {
         font-family: 'Raleway', sans-serif;
         font-size: 20px;
     }
@@ -23,14 +23,14 @@
         color:#f37976;
     }
 
-    h3.ralewayFont {
+    h3.ralewayHomepage {
         font-family: 'Raleway', sans-serif;
         font-size: 36px;
     }
 
 }
 
-h4.ralewaySmaller {
+.ralewayDefault {
     font-family: 'Raleway', sans-serif;
 }
 

@@ -21,13 +21,13 @@ const Order = () => {
             <Container className="animateTwo">
                 <Row>
                     <Col>
-                        <h1>Already reviewed the menu? Then let's order!</h1>
+                        <h1 className="ralewayDefault">Already reviewed the menu? Then let's order!</h1>
                     </Col>
                 </Row>
                 <br />
                 <Row>
                     <Col>
-                        <h2>Order directly from ASAP Poke</h2>
+                        <h2 className="ralewayDefault">Order directly from ASAP Poke</h2>
                         {/* Real link, but to a fake 555 number */}
                         <h4 className="singleLine"><a href="tel:773-555-0101">773-555-0101</a></h4>
                     </Col>
@@ -39,7 +39,7 @@ const Order = () => {
                     <Col md={6} className="midRangeBuffer">
                         <Row>
                             <Col>
-                                <h3>Or you can order from our preferred partners</h3>
+                                <h3 className="ralewayDefault">Or you can order from our preferred partners</h3>
                             </Col>
                         </Row>
                         <Row>
@@ -52,7 +52,7 @@ const Order = () => {
                         </Row>
                         <Row>
                             <Col>
-                                <h3>Be sure to add your Frequent Diner number to the comment section or your order!</h3>
+                                <h3 className="ralewayDefault">Be sure to add your Frequent Diner number to the comment section or your order!</h3>
                             </Col>
                         </Row>
                     </Col>
@@ -60,7 +60,7 @@ const Order = () => {
                     <Col md={6} className="midRangeBuffer">
                         <Row>
                             <Col>
-                                <h3>ASAP Poke is available on other delivery services!</h3>
+                                <h3 className="ralewayDefault">ASAP Poke is available on other delivery services!</h3>
                             </Col>
                         </Row>
                         <Row>
@@ -73,7 +73,7 @@ const Order = () => {
                         </Row>
                         <Row>
                             <Col>
-                                <h3>Frequent Diner Points are not earned on orders placed with these services</h3>
+                                <h3 className="ralewayDefault">Frequent Diner Points are not earned on orders placed with these services</h3>
                             </Col>
                         </Row>
                     </Col>

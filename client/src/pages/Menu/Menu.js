@@ -33,8 +33,10 @@ const Menu = () => {
                 <div className="smallBotBuffer">
                     <Row>
                         <Col>
-                            <p className="singleLine">Seasoned pro? Let's get you <Link to="/order">ordering ASAP</Link>!</p>
-                            <p className="singleLine">New to ASAP? Welcome! Here's how to build your custom creation!</p>
+                            <br />
+                            <h4 className="singleLine ralewayDefault">Seasoned pro? Let's get you <Link to="/order">ordering ASAP</Link>!</h4>
+                            <br />
+                            <h4 className="singleLine ralewayDefault">New to ASAP? Welcome! Here's how to build your custom creation!</h4>
                         </Col>
                     </Row>
                 </div>
@@ -53,7 +55,7 @@ const Menu = () => {
                 <div className="bottomBuffer">
                     <Row className="smallBotBuffer">
                         <Col>
-                            <h1>Step 1 - Choose your bowl!</h1>
+                            <h1 className="ralewayDefault">Step 1 - Choose your bowl!</h1>
                         </Col>
                     </Row>
                     {/* Content */}
@@ -62,15 +64,15 @@ const Menu = () => {
                         <Col md={6}>
                             <Row>
                                 <Col>
-                                    <h2>Regular Bowl - 12.95</h2>
-                                    <h3>24 oz. Perfect for lunch or dinner!</h3>
+                                    <h2 className="ralewayDefault">Regular Bowl - 12.95</h2>
+                                    <h3 className="ralewayDefault">24 oz. Perfect for lunch or dinner!</h3>
                                 </Col>
                             </Row>
                             <br />
                             <Row>
                                 <Col>
-                                    <h2>Shorty Bowl - 9.95</h2>
-                                    <h3>18 oz. Great for a snack or light meal!</h3>
+                                    <h2 className="ralewayDefault">Shorty Bowl - 9.95</h2>
+                                    <h3 className="ralewayDefault">18 oz. Great for a snack or light meal!</h3>
                                 </Col>
                             </Row>
                         </Col>
@@ -86,24 +88,24 @@ const Menu = () => {
                 <div className="bottomBuffer">
                     <Row className="smallBotBuffer">
                         <Col>
-                            <h1>Step 2 - Choose your base!</h1>
+                            <h1 className="ralewayDefault">Step 2 - Choose your base!</h1>
                         </Col>
                     </Row>
                     {/* Content */}
                     <Row className="justVert">
                         {/* Image */}
-                        <Col md={6}>
+                        <Col md={6} className="smallBotBuffer">
                             <Image className="zoomImg" src={ChooseBase} alt="Base options of rice, quiona, and greens" fluid />
                         </Col>
                         {/* Description */}
                         <Col md={6}>
-                            <h1>Brown Rice</h1>
+                            <h3 className="ralewayHomepage">Brown Rice</h3>
                             <br />
-                            <h1>Greens</h1>
+                            <h3 className="ralewayHomepage">Greens</h3>
                             <br />
-                            <h1>Quinoa Tabouli</h1>
+                            <h3 className="ralewayHomepage">Quinoa Tabouli</h3>
                             <br />
-                            <h1>Sushi Rice</h1>
+                            <h3 className="ralewayHomepage">Sushi Rice</h3>
                         </Col>
                     </Row>
                 </div>
@@ -113,21 +115,21 @@ const Menu = () => {
                 <div className="bottomBuffer">
                     <Row className="smallBotBuffer">
                         <Col>
-                            <h1>Step 3 - Choose your poke!</h1>
+                            <h1 className="ralewayDefault">Step 3 - Choose your poke!</h1>
                         </Col>
                     </Row>
                     {/* Content - Images and Description */}
                     <Row>
                         <Col md={4}>
-                            <h2>Ahi Tuna</h2>
+                            <h2 className="ralewayDefault">Ahi Tuna</h2>
                             <Image className="zoomImg" src={Tuna} alt="Ahi Tuna" fluid />
                         </Col>
                         <Col md={4}>
-                            <h2>Atlantic Salmon</h2>
+                            <h2 className="ralewayDefault">Atlantic Salmon</h2>
                             <Image className="zoomImg" src={Salmon} alt="Salmon" fluid />
                         </Col>
                         <Col md={4}>
-                            <h2>Gingered Beets</h2>
+                            <h2 className="ralewayDefault">Gingered Beets</h2>
                             <Image className="zoomImg" src={Beets} alt="Gingered Beets" fluid />
                         </Col>
                     </Row>
@@ -137,34 +139,34 @@ const Menu = () => {
                 <div className="bottomBuffer">
                     <Row className="smallBotBuffer">
                         <Col>
-                            <h1>Step 4 - Choose your style!</h1>
+                            <h1 className="ralewayDefault">Step 4 - Choose your style!</h1>
                         </Col>
                     </Row>
                     <Row>
                         {/* Classic Avocado */}
                         <Col md={3}>
-                            <h3>{styleOptions[0].name}</h3>
+                            <h3 className="ralewayDefault">{styleOptions[0].name}</h3>
                             <ul>
                                 {styleOptions[0].ingredients.map((item) => <li key={item}>{item}</li>)}
                             </ul>
                         </Col>
                         {/* Big Island Spicy */}
                         <Col md={3}>
-                            <h3>{styleOptions[1].name}</h3>
+                            <h3 className="ralewayDefault">{styleOptions[1].name}</h3>
                             <ul>
                                 {styleOptions[1].ingredients.map((item) => <li key={item}>{item}</li>)}
                             </ul>
                         </Col>
                         {/* Maui Crunch */}
                         <Col md={3}>
-                            <h3>{styleOptions[2].name}</h3>
+                            <h3 className="ralewayDefault">{styleOptions[2].name}</h3>
                             <ul>
                                 {styleOptions[2].ingredients.map((item) => <li key={item}>{item}</li>)}
                             </ul>
                         </Col>
                         {/* Ginger-Yuzu */}
                         <Col md={3}>
-                            <h3>{styleOptions[3].name}</h3>
+                            <h3 className="ralewayDefault">{styleOptions[3].name}</h3>
                             <ul>
                                 {styleOptions[3].ingredients.map((item) => <li key={item}>{item}</li>)}
                             </ul>
@@ -176,7 +178,7 @@ const Menu = () => {
                 <div className="smallBotBuffer">
                     <Row>
                         <Col>
-                            <h1>That's it! You've built your very own ASAP Poke Bowl</h1>
+                            <h1 className="ralewayDefault">That's it! You've built your very own ASAP Poke Bowl</h1>
                         </Col>
                     </Row>
                     <br />

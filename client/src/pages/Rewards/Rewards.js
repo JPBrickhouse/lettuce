@@ -45,9 +45,9 @@ const Rewards = () => {
                 {/* Headline description of the rewards program */}
                 <Row className="smallBotBuffer">
                     <Col>
-                        <h2>Earn Lettuce Entertain You Frequent Diner points with every ASAP Poke meal!</h2>
+                        <h2 className="ralewayDefault">Earn Lettuce Entertain You Frequent Diner points with every ASAP Poke meal!</h2>
                         <br />
-                        <h2>Simply add your Frequent Diner number to the comment section of every order!</h2>
+                        <h2 className="ralewayDefault">Simply add your Frequent Diner number to the comment section of every order!</h2>
                     </Col>
                 </Row>
                 <br />
@@ -59,8 +59,8 @@ const Rewards = () => {
                     <Col md={6} className="pokeBackgrounds midRangeBuffer" style={{ backgroundImage: `url(${pokeTwo10})` }}>
                         <Row>
                             <Col>
-                                <h2>Join</h2>
-                                <h3>Join today! Download the LettuceEats App</h3>
+                                <h2 className="ralewayDefault">Join</h2>
+                                <h3 className="ralewayDefault">Join today! Download the LettuceEats App</h3>
                             </Col>
                         </Row>
                         <Row>
@@ -82,9 +82,8 @@ const Rewards = () => {
                     <Col md={6} className="pokeBackgrounds" style={{ backgroundImage: `url(${pokeOne10})` }}>
                         <Row>
                             <Col>
-                                <h2>Already a member?</h2>
-                                <h3>Log in to earn and redeem Dining Rewards</h3>
-                                <p></p>
+                                <h2 className="ralewayDefault">Already a member?</h2>
+                                <h3 className="ralewayDefault">Log in to earn and redeem Dining Rewards</h3>
                             </Col>
                         </Row>
                         <Row>
