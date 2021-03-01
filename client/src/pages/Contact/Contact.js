@@ -3,19 +3,22 @@ import React, { useState } from "react"
 // Importing React Bootstrap components
 import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
+import Image from "react-bootstrap/Image"
 
 // Importing the custom stylesheet
 import "./ContactStyles.css"
 
-// Importing the airmail image
-import Airmail from "./airmail.jpg"
-
+// Importing the postcard and thank you images
+import postCardTwo from "./postcard2.jpg"
+import formThankYou from "./formThanks.jpg"
 
 const Contact = () => {
 
-    // State object corresponding to the 
+    // State object corresponding to the success of the form submission
+    // (Validation will prevent an improper form submission, so this only gets set to true when the form is submitted correctly)
     const [formSubmitted, setFormSubmitted] = useState(false);
 
     // State Object variables that corresponding to messages that will display if non-valid information is entered
@@ -124,10 +127,13 @@ const Contact = () => {
             // For the sake of this project, simply console log for record
             console.log(finalUserObject)
 
-            // Hide the form
-            document.getElementById("postcardImage").style.display = "none";
+            // Hide the form and associated content
+            let divsToHide = document.getElementsByClassName("hideOnSubmit")
+            for (let i=0; i<divsToHide.length; i++) {
+                divsToHide[i].style.display = "none";
+            }
 
-            // Set the formSubmitted variable to true
+            // Set the formSubmitted variable to true, which will trip the ternary operator check
             setFormSubmitted(true)
         }
         // the else statement runs if any of the validations has been found to be false
@@ -148,30 +154,36 @@ const Contact = () => {
         <div>
             <Container>
 
-                <div>
-                    Fill out a postcard below and we'll let you know about fresh deals on our fresh meals, along with other breaking news about ASAP Poke!
-
-                    Why do we need your birthday? For your annual birthday rewards, of course!
-
-                    Why do we need your zip code? To let you know about other Lettuce restaurants in your neighborhood!
+                {/* Div for the top of the contact page */}
+                <div className="hideOnSubmit" id="topOfContactPage">
+                    <Row>
+                        <Col md={8}>
+                            <h1>Fill out a postcard!</h1>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <p>The ASAP Poke Newsletter is your firsthand source for fresh deals on our fresh meals!</p>
+                        </Col>
+                    </Row>
                 </div>
 
-
-                <div id="postcardImage" style={{ backgroundImage: `url(${Airmail})` }}>
+                {/* Div with the form and postcard image */}
+                <div className="hideOnSubmit" id="postcardImage" style={{ backgroundImage: `url(${postCardTwo})` }}>
                     <br />
                     <br />
-                    <Container>
+                    <Col>
                         <Form onSubmit={formSubmission}>
 
                             <Form.Row as={Col}>
-                                <Col sm={4}>
+                                <Col sm={3}>
                                     <Form.Group controlId="formGridFirstName">
                                         <Form.Label id="firstNameID">{firstNameMessage}</Form.Label>
                                         <Form.Control type="text" placeholder="Jane" />
                                     </Form.Group>
                                 </Col>
 
-                                <Col sm={4}>
+                                <Col sm={3}>
                                     <Form.Group controlId="formGridLastName">
                                         <Form.Label id="lastNameID">{lastNameMessage}</Form.Label>
                                         <Form.Control type="text" placeholder="Smith" />
@@ -236,17 +248,28 @@ const Contact = () => {
                             </Col>
 
                         </Form>
-                    </Container>
+                    </Col>
                     <br />
                     <br />
                     <br />
+                </div>
+                <br />
+
+                {/* Bottom disclaimers on the contact page */}
+                <div className="hideOnSubmit" id="bottomOfContactPage">
+                    <Row>
+                        <Col>
+                            <p>Why do we need your birthday? For your annual birthday rewards, of course!</p>
+                            <p>Why do we need your zip code? To let you know about other Lettuce restaurants in your neighborhood!</p>
+                        </Col>
+                    </Row>
                 </div>
 
                 {/* Ternary operator to display a "Success" message if formSubmitted is true */}
                 {formSubmitted ?
                     <div>
                         {/* Success image! */}
-                        <p>"Success"</p>
+                        <Image src={formThankYou} alt="Thank you message for successful form submission" fluid />
                     </div>
                     :
                     <div>
