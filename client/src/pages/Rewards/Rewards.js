@@ -29,7 +29,7 @@ const Rewards = () => {
         <div>
             <Container>
                 {/* Header Row with Lettuce and ASAP logos */}
-                <Row className="justVert">
+                <Row className="justVert smallBotBuffer">
                     <Col md={5}>
                         <Image src={leyeLogo} alt="Lettuce Entertain You Logo" fluid />
                     </Col>
@@ -43,7 +43,7 @@ const Rewards = () => {
                 <br />
 
                 {/* Headline description of the rewards program */}
-                <Row>
+                <Row className="smallBotBuffer">
                     <Col>
                         <h2>Earn Lettuce Entertain You Frequent Diner points with every ASAP Poke meal!</h2>
                         <br />
@@ -53,7 +53,7 @@ const Rewards = () => {
                 <br />
 
                 {/* Membership Row for New and Existing */}
-                <Row>
+                <Row className="smallBotBuffer">
                     {/* Join column */}
                     <Col md={6} className="pokeBackgrounds" style={{ backgroundImage: `url(${pokeOne})` }}>
                         <Row>
@@ -95,22 +95,22 @@ const Rewards = () => {
                 <br />
 
                 {/* More links for users to visit! */}
-                <Row>
+                <Row className="smallBotBuffer">
                     <Col>
                         <p className="singleLine">For more information about program benefits, visit the <span><ExternalLink urlContent={"https://www.leye.com/frequent-diner/"} linkContent={"Frequent Diner website"}/></span>, or read our <span><ExternalLink urlContent={"https://www.leye.com/frequent-diner/faq/"} linkContent={"FAQs"}/></span></p>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="smallBotBuffer">
                     <Col>
                         <p className="singleLine">After you sign-up for the Frequent Diner Club, be sure to sign-up for the <Link to="/contact">ASAP Poke Newsletter</Link>, for the inside scoop of ASAP deals!</p>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="smallBotBuffer">
                     <Col>
                         <p className="singleLine">Need a refresher on our <Link to="/menu">menu</Link>? Check out our <Link to="/menu">fresh options</Link>!</p>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="smallBotBuffer">
                     <Col>
                         <h1 className="justVert"><Link to="/order">Ready to order? Let's roll!</Link></h1>
                     </Col>

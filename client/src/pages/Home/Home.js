@@ -34,30 +34,22 @@ const Home = () => {
                     </Row>
                 </div>
                 <br />
-
-
-                {/* Description
-                OR
-                Food photo */}
-
-
-
                 <div>
                     <Row>
                         <Col>
-                            <h2>ASAP Poke was born out of a single idea: bring Chicago the freshest, sushi-quality fish coupled with seasonal ingredients, as fast as possible.</h2>
+                            <h3>ASAP Poke was born out of a single idea: bring Chicago the freshest, sushi-quality fish coupled with seasonal ingredients, as fast as possible.</h3>
                         </Col>
                     </Row>
                     <br />
                     <Row>
                         <Col>
-                            <h2>Honoring the island tradition of sushi-quality fish and seasonal products, ASAP Poke is a chef-driven, delivery-only concept in Lincoln Park.</h2>
+                            <h3>Honoring the island tradition of sushi-quality fish and seasonal products, ASAP Poke is a chef-driven, delivery-only concept in Lincoln Park.</h3>
                         </Col>
                     </Row>
                     <br />
                     <Row>
                         <Col>
-                            <h2>Choose from our signature poke bowls or handcraft your own from an extensive list of ingredients, toppings and sauces.</h2>
+                            <h3>Choose from our signature poke bowls or handcraft your own from an extensive list of ingredients, toppings and sauces.</h3>
                         </Col>
                     </Row>
                     <br />
@@ -70,7 +62,7 @@ const Home = () => {
                         </Col>
                     </Row>
                     <br />
-                    <Row>
+                    <Row className="smallBotBuffer">
                         <Col>
                             <h1 className="justVert"><Link to="/contact">Get in touch!</Link></h1>
                         </Col>

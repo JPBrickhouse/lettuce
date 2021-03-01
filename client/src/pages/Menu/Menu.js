@@ -43,7 +43,7 @@ const Menu = () => {
                 <div className="bottomBuffer">
                     <Row>
                         <Col className="justVert">
-                            <Image src={BYO} alt="Custom bowl surrounded by ingredients" fluid />
+                            <Image src={BYO} alt="Custom bowl surrounded by ingredients" style={{ width: "75%" }} fluid />
                         </Col>
                     </Row>
                 </div>
@@ -66,10 +66,10 @@ const Menu = () => {
                                     <h3>24 oz. Perfect for lunch or dinner!</h3>
                                 </Col>
                             </Row>
-                            <br/>
+                            <br />
                             <Row>
                                 <Col>
-                                    <h2>Shorty Bowl - 9.95</h2>   
+                                    <h2>Shorty Bowl - 9.95</h2>
                                     <h3>18 oz. Great for a snack or light meal!</h3>
                                 </Col>
                             </Row>
@@ -98,11 +98,11 @@ const Menu = () => {
                         {/* Description */}
                         <Col md={6}>
                             <h1>Brown Rice</h1>
-                            <br/>
+                            <br />
                             <h1>Greens</h1>
-                            <br/>
+                            <br />
                             <h1>Quinoa Tabouli</h1>
-                            <br/>
+                            <br />
                             <h1>Sushi Rice</h1>
                         </Col>
                     </Row>
@@ -177,15 +177,19 @@ const Menu = () => {
                     <Row>
                         <Col>
                             <h1>That's it! You've built your very own ASAP Poke Bowl</h1>
-                            <br />
-                            <Image src={FinalBowl} alt="Final Poke bowl" fluid />
+                        </Col>
+                    </Row>
+                    <br />
+                    <Row>
+                        <Col className="justVert">
+                            <Image src={FinalBowl} alt="Final Poke bowl" style={{ width: "60%" }} fluid />
                         </Col>
                     </Row>
                 </div>
-                <div>
+                <div className="smallBotBuffer">
                     <Row>
                         <Col>
-                        <h1 className="justVert"><Link to="/order">Ready to order? Let's roll!</Link></h1>
+                            <h1 className="justVert"><Link to="/order">Ready to order? Let's roll!</Link></h1>
                         </Col>
                     </Row>
                 </div>
