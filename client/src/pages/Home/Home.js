@@ -1,5 +1,8 @@
 import React from "react"
 
+// Importing reacter router dom
+import { Link } from 'react-router-dom'
+
 // Importing React Bootstrap components
 import Container from "react-bootstrap/Container"
 import Image from "react-bootstrap/Image"
@@ -30,7 +33,7 @@ const Home = () => {
                         </Col>
                     </Row>
                 </div>
-
+                <br />
 
 
                 {/* Description
@@ -41,27 +44,39 @@ const Home = () => {
 
                 <div>
                     <Row>
-                        <p>
-                            ASAP Poke was born out of a single idea: bring Chicago the freshest, sushi-quality fish coupled with seasonal ingredients, as fast as possible.
-                        </p>
-                        <p>
-                            Honoring the island tradition of sushi-quality fish and seasonal products, ASAP Poke is a chef-driven, delivery-only concept in Lincoln Park.
-                        </p>
-                        <p>
-                            Choose from our signature poke bowls or handcraft your own from an extensive list of ingredients, toppings and sauces.
-                        </p>
-                        <p>
-                            Check out our menu - link to menu page
-                        </p>
-                        <p>
-                            Place your order - link to order
-                        </p>
-                        <p>
-                            Get in touch - link to contact page
-                        </p>
-                        <p>
-                            Earn rewards! - link to rewards page
-                        </p>
+                        <Col>
+                            <h2>ASAP Poke was born out of a single idea: bring Chicago the freshest, sushi-quality fish coupled with seasonal ingredients, as fast as possible.</h2>
+                        </Col>
+                    </Row>
+                    <br />
+                    <Row>
+                        <Col>
+                            <h2>Honoring the island tradition of sushi-quality fish and seasonal products, ASAP Poke is a chef-driven, delivery-only concept in Lincoln Park.</h2>
+                        </Col>
+                    </Row>
+                    <br />
+                    <Row>
+                        <Col>
+                            <h2>Choose from our signature poke bowls or handcraft your own from an extensive list of ingredients, toppings and sauces.</h2>
+                        </Col>
+                    </Row>
+                    <br />
+                    <Row>
+                        <Col>
+                            <p className="singleLine">New to ASAP? Welcome! Check out our <Link to="/menu">menu</Link> for all of our fresh favorites!</p>
+                        </Col>
+                        <Col>
+                            <p className="singleLine">Seasoned pro? Let's get you <Link to="/order">ordering ASAP</Link>!</p>
+                        </Col>
+                    </Row>
+                    <br />
+                    <Row>
+                        <Col>
+                            <h1 className="justVert"><Link to="/contact">Get in touch!</Link></h1>
+                        </Col>
+                        <Col>
+                            <h1 className="justVert"><Link to="/rewards">Earn rewards!</Link></h1>
+                        </Col>
                     </Row>
                 </div>
 
