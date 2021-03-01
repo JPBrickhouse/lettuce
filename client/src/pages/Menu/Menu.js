@@ -27,7 +27,7 @@ import styleOptions from "./styleOptions.json"
 const Menu = () => {
     return (
         <div>
-            <Container>
+            <Container className="animateTwo">
                 {/* -------------------------------------------------- */}
                 {/* Headline */}
                 <div className="smallBotBuffer">
@@ -76,7 +76,7 @@ const Menu = () => {
                         </Col>
                         {/* Image */}
                         <Col md={6}>
-                            <Image className="wiggleImg" src={Bowl} alt="Empty bowl awaiting ingredients" fluid />
+                            <Image className="zoomImg" src={Bowl} alt="Empty bowl awaiting ingredients" fluid />
                         </Col>
                     </Row>
                 </div>
@@ -93,7 +93,7 @@ const Menu = () => {
                     <Row className="justVert">
                         {/* Image */}
                         <Col md={6}>
-                            <Image className="wiggleImg" src={ChooseBase} alt="Base options of rice, quiona, and greens" fluid />
+                            <Image className="zoomImg" src={ChooseBase} alt="Base options of rice, quiona, and greens" fluid />
                         </Col>
                         {/* Description */}
                         <Col md={6}>
@@ -120,15 +120,15 @@ const Menu = () => {
                     <Row>
                         <Col md={4}>
                             <h2>Ahi Tuna</h2>
-                            <Image className="wiggleImg" src={Tuna} alt="Ahi Tuna" fluid />
+                            <Image className="zoomImg" src={Tuna} alt="Ahi Tuna" fluid />
                         </Col>
                         <Col md={4}>
                             <h2>Atlantic Salmon</h2>
-                            <Image className="wiggleImg" src={Salmon} alt="Salmon" fluid />
+                            <Image className="zoomImg" src={Salmon} alt="Salmon" fluid />
                         </Col>
                         <Col md={4}>
                             <h2>Gingered Beets</h2>
-                            <Image className="wiggleImg" src={Beets} alt="Gingered Beets" fluid />
+                            <Image className="zoomImg" src={Beets} alt="Gingered Beets" fluid />
                         </Col>
                     </Row>
                 </div>

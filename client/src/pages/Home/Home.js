@@ -18,7 +18,7 @@ import "./homeStyles.css"
 const Home = () => {
     return (
         <div>
-            <Container id="animateFour">
+            <Container className="animateFour">
                 <div>
                     <Row>
                         <Col>

@@ -16,8 +16,11 @@
     }
 }
 
+.animateTwo {
+    animation: fadeIn 2s;
+}
 
-#animateFour {
+.animateFour {
     animation: fadeIn 4s;
 }
 

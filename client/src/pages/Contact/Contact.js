@@ -152,7 +152,7 @@ const Contact = () => {
 
     return (
         <div>
-            <Container>
+            <Container className="animateTwo">
 
                 {/* Div for the top of the contact page */}
                 <div className="hideOnSubmit" id="topOfContactPage">

@@ -18,7 +18,7 @@ import Postmates from "./postmates.jpg"
 const Order = () => {
     return (
         <div>
-            <Container>
+            <Container className="animateTwo">
                 <Row>
                     <Col>
                         <h1>Already reviewed the menu? Then let's order!</h1>
@@ -44,10 +44,10 @@ const Order = () => {
                         </Row>
                         <Row>
                             <Col>
-                                <ExternalLink urlContent={"https://www.exploretock.com/"} linkContent={<Image src={Tock} alt="Tock Logo" fluid />} />
+                                <ExternalLink urlContent={"https://www.exploretock.com/"} linkContent={<Image className="wiggleImg" src={Tock} alt="Tock Logo" fluid />} />
                             </Col>
                             <Col>
-                                <ExternalLink urlContent={"https://get.chownow.com/"} linkContent={<Image src={Chow} alt="Chownow Logo" fluid />} />
+                                <ExternalLink urlContent={"https://get.chownow.com/"} linkContent={<Image className="wiggleImg" src={Chow} alt="Chownow Logo" fluid />} />
                             </Col>
                         </Row>
                         <Row>
@@ -65,10 +65,10 @@ const Order = () => {
                         </Row>
                         <Row>
                             <Col>
-                                <ExternalLink urlContent={"https://www.doordash.com/en-US"} linkContent={<Image src={Doordash} alt="Doordash Logo" fluid />} />
+                                <ExternalLink urlContent={"https://www.doordash.com/en-US"} linkContent={<Image className="wiggleImg" src={Doordash} alt="Doordash Logo" fluid />} />
                             </Col>
                             <Col>
-                                <ExternalLink urlContent={"https://postmates.com/"} linkContent={<Image src={Postmates} alt="Postmates Logo" fluid />} />
+                                <ExternalLink urlContent={"https://postmates.com/"} linkContent={<Image className="wiggleImg" src={Postmates} alt="Postmates Logo" fluid />} />
                             </Col>
                         </Row>
                         <Row>

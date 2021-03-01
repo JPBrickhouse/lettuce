@@ -35,6 +35,13 @@ h1,h2,h3 {
     text-align: center;
 }
 
+.zoomImg:hover{
+    transform: scale(1.05);
+}
+
+
+
+
 .wiggleImg:hover {
     animation: shake 0.33s;
 }

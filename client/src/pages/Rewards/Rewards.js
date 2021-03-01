@@ -18,8 +18,8 @@ import leyeLogo from "./leyeLogo.jpg"
 import ASAPlogo from "./Asap-Poke.png"
 import Apple from "./AppStore.png"
 import Google from "./GooglePlay.png"
-import pokeOne from "./poke1.jpg"
-import pokeTwo from "./poke2.jpg"
+import pokeOne10 from "./poke1-10.png"
+import pokeTwo10 from "./poke2-10.png"
 
 // Importing the custom stylesheet
 import "./rewardStyles.css"
@@ -27,7 +27,7 @@ import "./rewardStyles.css"
 const Rewards = () => {
     return (
         <div>
-            <Container>
+            <Container className="animateTwo">
                 {/* Header Row with Lettuce and ASAP logos */}
                 <Row className="justVert smallBotBuffer">
                     <Col md={5}>
@@ -54,12 +54,13 @@ const Rewards = () => {
 
                 {/* Membership Row for New and Existing */}
                 <Row className="smallBotBuffer">
+                    
                     {/* Join column */}
-                    <Col md={6} className="pokeBackgrounds" style={{ backgroundImage: `url(${pokeOne})` }}>
+                    <Col md={6} className="pokeBackgrounds" style={{ backgroundImage: `url(${pokeTwo10})` }}>
                         <Row>
                             <Col>
                                 <h2>Join</h2>
-                                <h3>Join today by downloading the LettuceEats App</h3>
+                                <h3>Join today! Download the LettuceEats App</h3>
                             </Col>
                         </Row>
                         <Row>
@@ -76,8 +77,13 @@ const Rewards = () => {
                             </Col>
                         </Row>
                     </Col>
+                    
+                    {/* Middle Column for spacing */}
+                    {/* <Col md={2}>
+                    </Col> */}
+                    
                     {/* Already a member column */}
-                    <Col md={6} className="pokeBackgrounds" style={{ backgroundImage: `url(${pokeTwo})` }}>
+                    <Col md={6} className="pokeBackgrounds" style={{ backgroundImage: `url(${pokeOne10})` }}>
                         <Row>
                             <Col>
                                 <h2>Already a member?</h2>
