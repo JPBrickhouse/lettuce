@@ -85,28 +85,36 @@ const Contact = () => {
 
         // If any of the validation efforts FAIL, update corresponding messages
         if (isFirstNameValid === false) {
+            document.getElementById("firstNameID").style.color = "#FF0000"
             setFirstNameMessage("Please enter valid first name")
         }
         if (isLastNameValid === false) {
+            document.getElementById("lastNameID").style.color = "#FF0000"
             setLastNameMessage("Please enter valid last name")
         }
         if (isEmailValid === false) {
+            document.getElementById("emailID").style.color = "#FF0000"
             setEmailMessage("Please enter a valid email");
         }
         if (isPhoneValid === false) {
+            document.getElementById("phoneID").style.color = "#FF0000"
             setPhoneMessage("Please enter a valid phone");
         }
         if (isMonthValid === false) {
+            document.getElementById("monthID").style.color = "#FF0000"
             setMonthMessage("Valid month 01-12");
         }
         if (isDateValid === false) {
+            document.getElementById("dateID").style.color = "#FF0000"
             setDateMessage("Valid date 01-31");
         }
         if (isYearValid === false) {
+            document.getElementById("yearID").style.color = "#FF0000"
             setYearMessage("Please enter valid year")
         }
         if (isZipValid === false) {
-            setZipCodeMessage("Please enter valid zip code")
+            document.getElementById("zipCodeID").style.color = "#FF0000"
+            setZipCodeMessage("Please enter valid zip")
         }
 
         // If ALL of the criteria have been validated as true...
@@ -156,14 +164,14 @@ const Contact = () => {
                             <Form.Row as={Col}>
                                 <Col sm={4}>
                                     <Form.Group controlId="formGridFirstName">
-                                        <Form.Label>{firstNameMessage}</Form.Label>
+                                        <Form.Label id="firstNameID">{firstNameMessage}</Form.Label>
                                         <Form.Control type="text" placeholder="Jane" />
                                     </Form.Group>
                                 </Col>
 
                                 <Col sm={4}>
                                     <Form.Group controlId="formGridLastName">
-                                        <Form.Label>{lastNameMessage}</Form.Label>
+                                        <Form.Label id="lastNameID">{lastNameMessage}</Form.Label>
                                         <Form.Control type="text" placeholder="Smith" />
                                     </Form.Group>
                                 </Col>
@@ -172,14 +180,14 @@ const Contact = () => {
                             <Form.Row as={Col}>
                                 <Col sm={4}>
                                     <Form.Group controlId="formGridEmail">
-                                        <Form.Label>{emailMessage}</Form.Label>
+                                        <Form.Label id="emailID">{emailMessage}</Form.Label>
                                         <Form.Control type="text" placeholder="jane.smith@email.com" />
                                     </Form.Group>
                                 </Col>
 
                                 <Col sm={4}>
                                     <Form.Group controlId="formGridPhone">
-                                        <Form.Label>{phoneMessage}</Form.Label>
+                                        <Form.Label id="phoneID">{phoneMessage}</Form.Label>
                                         <Form.Control type="text" placeholder="123-456-7890 or 1234567890" />
                                     </Form.Group>
                                 </Col>
@@ -192,21 +200,21 @@ const Contact = () => {
                             <Form.Row as={Col}>
                                 <Col sm={2}>
                                     <Form.Group controlId="formGridBirthdayMonth">
-                                        <Form.Label>{monthMessage}</Form.Label>
+                                        <Form.Label id="monthID">{monthMessage}</Form.Label>
                                         <Form.Control type="text" placeholder="06" />
                                     </Form.Group>
                                 </Col>
 
                                 <Col sm={2}>
                                     <Form.Group controlId="formGridBirthdayDay">
-                                        <Form.Label>{dateMessage}</Form.Label>
+                                        <Form.Label id="dateID">{dateMessage}</Form.Label>
                                         <Form.Control type="text" placeholder="10" />
                                     </Form.Group>
                                 </Col>
 
                                 <Col sm={2}>
                                     <Form.Group controlId="formGridBirthdayYear">
-                                        <Form.Label>{yearMessage}</Form.Label>
+                                        <Form.Label id="yearID">{yearMessage}</Form.Label>
                                         <Form.Control type="text" placeholder="1971" />
                                     </Form.Group>
                                 </Col>
@@ -215,7 +223,7 @@ const Contact = () => {
                             <Form.Row as={Col}>
                                 <Col sm={2}>
                                     <Form.Group controlId="formGridZipCode">
-                                        <Form.Label>{zipCodeMessage}</Form.Label>
+                                        <Form.Label id="zipCodeID">{zipCodeMessage}</Form.Label>
                                         <Form.Control type="text" placeholder="60614" />
                                     </Form.Group>
                                 </Col>
