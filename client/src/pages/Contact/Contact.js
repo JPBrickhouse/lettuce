@@ -56,6 +56,7 @@ const Contact = () => {
     }
     // ZIP CODE (numbers 00000 to 99999)
     function validateZipcode(zipCode) {
+        console.log(zipCode)
         return /^\d{5}$/gm.test(zipCode);
     }
 
@@ -83,42 +84,31 @@ const Contact = () => {
         const isYearValid = validateYear(birthdayYear);
         const isZipValid = validateZipcode(zipCode)
 
-        // If any of the validation efforts FAIL, update corresponding messages
-        if (isFirstNameValid === false) {
-            document.getElementById("firstNameID").style.color = "#FF0000"
-            setFirstNameMessage("Please enter valid first name")
+        // A function that runs the style updates to provide feedback messages on form submission
+        // It takes in an element ID and desired hex code color
+        function styleUpdate(elementID, msgHEXcolor) {
+            document.getElementById(elementID).style.color = msgHEXcolor;
         }
-        if (isLastNameValid === false) {
-            document.getElementById("lastNameID").style.color = "#FF0000"
-            setLastNameMessage("Please enter valid last name")
-        }
-        if (isEmailValid === false) {
-            document.getElementById("emailID").style.color = "#FF0000"
-            setEmailMessage("Please enter a valid email");
-        }
-        if (isPhoneValid === false) {
-            document.getElementById("phoneID").style.color = "#FF0000"
-            setPhoneMessage("Please enter a valid phone");
-        }
-        if (isMonthValid === false) {
-            document.getElementById("monthID").style.color = "#FF0000"
-            setMonthMessage("Valid month 01-12");
-        }
-        if (isDateValid === false) {
-            document.getElementById("dateID").style.color = "#FF0000"
-            setDateMessage("Valid date 01-31");
-        }
-        if (isYearValid === false) {
-            document.getElementById("yearID").style.color = "#FF0000"
-            setYearMessage("Please enter valid year")
-        }
-        if (isZipValid === false) {
-            document.getElementById("zipCodeID").style.color = "#FF0000"
-            setZipCodeMessage("Please enter valid zip")
+
+        // A function that runs switch cases for each of the validation checks
+        // It takes in a validation check, corresponding element ID, associated stateMessageFunction, and relevant success and fail messages
+        // Upon true, green success messages are returned
+        // Upon false, red error messages are returned
+        function checkTheSwitchCase(validationCheck, elementID, stateMessageFunction, successMsg, failMsg) {
+            switch (validationCheck) {
+                case true:
+                    styleUpdate(elementID, "#028A0F");
+                    stateMessageFunction(successMsg);
+                    break;
+                case false:
+                    styleUpdate(elementID, "#FF0000");
+                    stateMessageFunction(failMsg);
+                    break;
+            }
         }
 
         // If ALL of the criteria have been validated as true...
-        if (isFirstNameValid && isLastNameValid && isEmailValid && isPhoneValid && isMonthValid && isDateValid && isYearValid) {
+        if (isFirstNameValid && isLastNameValid && isEmailValid && isPhoneValid && isMonthValid && isDateValid && isYearValid && isZipValid) {
             // Creating a SINGLE user object (JSON - Javascript Object Notation) for ease of file transfer purposes
             const finalUserObject = {
                 firstName: firstName,
@@ -139,6 +129,18 @@ const Contact = () => {
 
             // Set the formSubmitted variable to true
             setFormSubmitted(true)
+        }
+        // the else statement runs if any of the validations has been found to be false
+        else {
+            // Running the switch cases for each of the validation checks
+            checkTheSwitchCase(isFirstNameValid, "firstNameID", setFirstNameMessage, "First name - success!", "*Please enter valid first name*");
+            checkTheSwitchCase(isLastNameValid, "lastNameID", setLastNameMessage, "Last name - success!", "*Please enter valid last name*");
+            checkTheSwitchCase(isEmailValid, "emailID", setEmailMessage, "Email - success!", "*Please enter a valid email*");
+            checkTheSwitchCase(isPhoneValid, "phoneID", setPhoneMessage, "Phone number - success!", "*Please enter a valid phone*");
+            checkTheSwitchCase(isMonthValid, "monthID", setMonthMessage, "Month - success!", "*Valid month 01-12*")
+            checkTheSwitchCase(isDateValid, "dateID", setDateMessage, "Date - success!", "*Valid date 01-31*")
+            checkTheSwitchCase(isYearValid, "yearID", setYearMessage, "Year - success!", "*Enter valid year*")
+            checkTheSwitchCase(isZipValid, "zipCodeID", setZipCodeMessage, "Zip - success!", "*Enter valid zip*")
         }
     }
 
