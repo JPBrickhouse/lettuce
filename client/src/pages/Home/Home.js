@@ -11,6 +11,7 @@ import Col from "react-bootstrap/Col"
 
 // Importing the images
 import LOGO from "./Asap-Poke.jpg"
+import HERO from "./asap-poke-hero.jpg"
 
 // Importing the custom stylesheet
 import "./homeStyles.css"
@@ -43,6 +44,12 @@ const Home = () => {
                     <br />
                     <Row>
                         <Col>
+                            <Image src={HERO} alt="Hero image of delicious ASAP poke" fluid/>
+                        </Col>
+                    </Row>
+                    <br />
+                    <Row>
+                        <Col>
                             <h3 className="ralewayHomepage">Honoring the island tradition of sushi-quality fish and seasonal products, ASAP Poke is a chef-driven, delivery-only concept in Lincoln Park.</h3>
                         </Col>
                     </Row>
@@ -64,10 +71,10 @@ const Home = () => {
                     <br />
                     <Row className="smallBotBuffer">
                         <Col md={6} className="smallBotBuffer">
-                            <h1 className="justVert"><Link to="/contact">Get in touch!</Link></h1>
+                            <h1 className="justVert"><Link to="/contact">Get in touch</Link></h1>
                         </Col>
                         <Col md={6} className="smallBotBuffer">
-                            <h1 className="justVert"><Link to="/rewards">Earn rewards!</Link></h1>
+                            <h1 className="justVert"><Link to="/rewards">Earn rewards</Link></h1>
                         </Col>
                     </Row>
                 </div>

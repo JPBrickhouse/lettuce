@@ -113,7 +113,7 @@ const Rewards = () => {
                 </Row>
                 <Row className="smallBotBuffer">
                     <Col>
-                        <h1 className="justVert"><Link to="/order">Ready to order? Let's roll!</Link></h1>
+                        <h1 className="justVert"><Link to="/order">Ready to order? Let's roll</Link></h1>
                     </Col>
                 </Row>
             </Container>
