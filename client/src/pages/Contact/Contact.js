@@ -195,14 +195,14 @@ const Contact = () => {
                                 <Col sm={4}>
                                     <Form.Group controlId="formGridEmail">
                                         <Form.Label id="emailID">{emailMessage}</Form.Label>
-                                        <Form.Control type="text" placeholder="jane.smith@email.com" />
+                                        <Form.Control type="email" required placeholder="jane.smith@email.com" />
                                     </Form.Group>
                                 </Col>
 
                                 <Col sm={4}>
                                     <Form.Group controlId="formGridPhone">
                                         <Form.Label id="phoneID">{phoneMessage}</Form.Label>
-                                        <Form.Control type="text" placeholder="123-456-7890 or 1234567890" />
+                                        <Form.Control type="tel" placeholder="123-456-7890 or 1234567890" />
                                     </Form.Group>
                                 </Col>
                             </Form.Row>
@@ -268,8 +268,8 @@ const Contact = () => {
                 {/* Ternary operator to display a "Success" message if formSubmitted is true */}
                 {formSubmitted ?
                     <div>
-                        {/* Success image! */}
-                        <Image src={formThankYou} alt="Thank you message for successful form submission" fluid />
+                        {/* Success message! */}
+                        <p id="thankYouMessage">Thank you for your submission! You're all signed up!</p>
                     </div>
                     :
                     <div>
